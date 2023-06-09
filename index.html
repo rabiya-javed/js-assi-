@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation</title>
+</head>
+<body>
+  <div>
+    <h1>DOM</h1>
+    <div id="form-content" class="content">
+      <label for="first-name">First Name</label>
+      <input type="text" id="first-name" />
+      <label for="last-name">Last Name</label>
+      <input type="text" id="last-name" />
+      <label for="email">Email</label>
+      <input type="text" id="email" />
+    </div>
+    <div id="main-content" class="content">
+      <p class="render">First Name: Ali</p>
+      <p class="render" id="lastName">Last Name: Bank</p>
+      <p class="render">Email: alibank@example.com</p>
+      <p class="render">Country: Pakistan</p>
+      <p class="render">Contact: +92 300 1234567</p>
+    </div>
+  </div>
+
+  <script>
+    // i. Get element of id "main-content" and assign them in a variable.
+    var mainContent = document.getElementById("main-content");
+
+    // ii. Display all child elements of "main-content" element.
+    var childElements = mainContent.children;
+    for (var i = 0; i < childElements.length; i++) {
+      console.log(childElements[i]);
+    }
+
+    // iii. Get all elements of class "render" and show their innerHTML in the browser.
+    var renderElements = document.getElementsByClassName("render");
+    for (var j = 0; j < renderElements.length; j++) {
+      console.log(renderElements[j].innerHTML);
+    }
+
+    // iv. Fill input value whose element id is "first-name" using JavaScript.
+    var firstNameInput = document.getElementById("first-name");
+    firstNameInput.value = "Joy";
+
+    // v. Repeat part iv for id "last-name" and "email".
+    var lastNameInput = document.getElementById("last-name");
+    var emailInput = document.getElementById("email");
+    lastNameInput.value = "Do";
+    emailInput.value = "joy@example.com";
+  </script>
+</body>
+</html>
